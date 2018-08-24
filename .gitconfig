@@ -1,0 +1,56 @@
+[gui]
+[user]
+	name = Sergei Bocharov
+	email = sergei-b84@bk.ru
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[alias]
+	co = checkout
+	ci = commit
+	st = status -sb
+	b = branch
+        get = fetch --all --prune
+	hist = log --pretty=format:'%C(yellow)%h%C(reset) %ad | %C(75)%s%C(reset) %C(yellow)%d%C(reset) [%an]'  --graph --date=short --branches
+[log]
+	decorate=short
+[core]
+	editor = /usr/bin/vim
+	autocrlf = input
+	excludesfile = /Users/godfreyd/.gitignore
+[diff]
+	noprefix = true
+	tool = vimdiff
+[push]
+	default = current
+[url "git@github.com:"]
+	pushInsteadOf = "gh:"
+	pushInsteadOf = "git://github.com/"
+[url "git://github.com/"]
+	insteadOf = "gh:"
+[url "git@github.yandex-team.ru:"]
+	pushInsteadOf = "ghyt:"
+	pushInsteadOf = "git://github.yandex-team.ru/"
+[url "git://github.yandex-team.ru/"]
+		insteadOf = "ghyt:"
+[lfs]
+	batch = true
+	concurrenttransfers = 15
+[difftool]
+	prompt = false
+	prompt = false
+[http]
+	postBuffer = 524288000
+[filter "lfs"]
+        smudge = git-lfs smudge --skip %f
+        process = git-lfs filter-process --skip
+        required = true
+        clean = git-lfs clean %f
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+[rebase]
+	autosquash = true
