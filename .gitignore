@@ -6,6 +6,5 @@
 *.pid
 *.gz
 
-ySVN
 .DS_Store
 node_modules
